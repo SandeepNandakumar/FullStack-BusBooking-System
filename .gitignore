@@ -1,0 +1,12 @@
+# Visual Studio
+.vs/
+bin/
+obj/
+
+# React
+node_modules/
+build/
+
+# System files
+Thumbs.db
+.DS_Store
