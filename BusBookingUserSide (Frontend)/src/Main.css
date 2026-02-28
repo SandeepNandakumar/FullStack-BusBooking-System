@@ -1,0 +1,57 @@
+.home {
+  height: 90vh;
+}
+
+.hero {
+  background: linear-gradient(
+      rgba(0,0,0,0.5),
+      rgba(0,0,0,0.5)
+    ),
+    url("https://images.unsplash.com/photo-1544620347-c4fd4a3d5957");
+
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-box {
+  margin-top: 30px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.search-box input {
+  padding: 10px;
+}
+
+
+.search-box select,
+.search-box input {
+  padding: 12px;
+  font-size: 16px;
+  height: 45px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  min-width: 180px;
+}
+.search-btn {
+  height: 45px;
+  background-color: #ff6b00;
+  color: white;
+  border: none;
+  padding: 0 25px;
+  border-radius: 5px;
+  cursor: pointer;
+}
