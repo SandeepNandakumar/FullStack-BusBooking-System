@@ -1,12 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom';
-import Home from './Home';
+import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Navbar from './Components/Navbar'; 
 import Main from './pages/Main'; 
-import SearchResult from './pages/SearchResult';
+import SearchResults from './pages/SearchResult';
+import SeatSelection from './pages/SeatSelection';
+import PassengerDetails from './pages/PassengerDetails';
+import Confirmation from './pages/BookingConfirmation';
 function App() {
   return (
     <BrowserRouter>
@@ -17,6 +20,9 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/Main" element={<Main />} />
         <Route path="/searchresults" element={<SearchResults />} />
+        <Route path="/seat-selection" element={<SeatSelection />} />
+        <Route path="/passenger-details" element={<PassengerDetails />} />
+        <Route path="/confirmation" element={<Confirmation />} />
         
       </Routes>
     </BrowserRouter>

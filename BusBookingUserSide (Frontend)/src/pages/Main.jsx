@@ -1,8 +1,11 @@
 import "./Main.css";
 import { useNavigate } from "react-router-dom";
-
+import { useState } from "react";
 function Main() {
     const navigate = useNavigate();
+    const [from, setFrom] = useState("");
+    const [to, setTo] = useState(""); 
+    const [date, setDate] = useState("");
 
   const districts = [
     "Thiruvananthapuram",
@@ -20,6 +23,16 @@ function Main() {
     "Kannur",
     "Kasaragod"
   ];
+  const handleSearch = () => {
+    if (!from || !to || !date) {
+      alert("Please fill all fields");
+      return;
+    }
+    const [year, month, day] = date.split("-");
+    const formattedDate = `${day}-${month}-${year}`;
+    navigate("/searchresults", { 
+      state: { from, to, date:formattedDate } });
+  };
 
   return (
     <div className="home">
@@ -30,25 +43,25 @@ function Main() {
         <div className="search-box">
 
           {/* FROM */}
-          <select>
-            <option>Select From</option>
+          <select value={from} onChange={(e)=> setFrom(e.target.value)}>
+            <option value="">Select From</option>
             {districts.map((district, index) => (
-              <option key={index}>{district}</option>
+              <option key={index} value={district}>{district}</option>
             ))}
           </select>
 
           {/* TO */}
-          <select>
-            <option>Select To</option>
+          <select value={to} onChange={(e)=>setTo(e.target.value)}>
+            <option value="">Select To</option>
             {districts.map((district, index) => (
-              <option key={index}>{district}</option>
+              <option key={index} value={district}>{district}</option>
             ))}
           </select>
 
           {/* DATE */}
-          <input type="date" />
+          <input type="date" onChange={(e)=>setDate(e.target.value)} />
 
-          <button className="search-btn" onClick={()=>navigate("/searchresults")}>
+          <button className="search-btn" onClick={handleSearch}>
             Search Bus
           </button>
 
