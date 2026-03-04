@@ -10,6 +10,7 @@ import SearchResults from './pages/SearchResult';
 import SeatSelection from './pages/SeatSelection';
 import PassengerDetails from './pages/PassengerDetails';
 import Confirmation from './pages/BookingConfirmation';
+import MyBookings from './pages/MyBookings';
 function App() {
   return (
     <BrowserRouter>
@@ -23,6 +24,7 @@ function App() {
         <Route path="/seat-selection" element={<SeatSelection />} />
         <Route path="/passenger-details" element={<PassengerDetails />} />
         <Route path="/confirmation" element={<Confirmation />} />
+        <Route path="/my-bookings" element={<MyBookings />} />
         
       </Routes>
     </BrowserRouter>

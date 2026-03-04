@@ -3,6 +3,9 @@ function SearchResults() {
   const location = useLocation();
   const navigate = useNavigate();
   const { from, to, date } = location.state || {};
+  const handleSeatSelection = (bus) => {
+    navigate("/seat-selection", { state: { bus, from, to, date } });
+  }
   const Buses=[
     {
       id:1,
@@ -49,7 +52,7 @@ function SearchResults() {
             <p>Departure: {bus.departure}</p>
             <p>Arrival: {bus.arrival}</p>
             <p>Price: ₹{bus.price}</p>
-            <button onClick={()=>navigate("/seat-selection")}>Please select your seat</button>
+            <button onClick={()=>handleSeatSelection(bus)}>Please select your seat</button>
           </div>
         ))}
       </div>
