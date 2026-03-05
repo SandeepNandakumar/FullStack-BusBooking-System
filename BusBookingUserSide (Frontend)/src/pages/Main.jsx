@@ -1,11 +1,17 @@
 import "./Main.css";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 function Main() {
     const navigate = useNavigate();
     const [from, setFrom] = useState("");
     const [to, setTo] = useState(""); 
     const [date, setDate] = useState("");
+    useEffect(() => {
+      const isloggedIn = localStorage.getItem("isLoggedIn");
+      if (!isloggedIn) {
+        navigate("/login");
+      }
+    }, []);
 
   const districts = [
     "Thiruvananthapuram",

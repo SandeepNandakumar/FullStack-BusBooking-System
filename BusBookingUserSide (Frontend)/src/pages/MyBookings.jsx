@@ -35,6 +35,8 @@ function MyBookings() {
 
               <h3>{booking.bus.name}</h3>
 
+              <p><b>Booking ID:</b> {booking.bookingId}</p>
+
               <p><b>Passenger:</b> {booking.name}</p>
 
               <p>

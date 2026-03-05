@@ -10,12 +10,14 @@ function PassengerDetails() {
   const [age, setAge] = useState(""); 
   const [gender, setGender] = useState("");
   const [phone, setPhone] = useState("");
+  const bookingId = "KH" + Date.now();
   const handlesubmit = () => {
     if(!name || !age || !gender || !phone){
       alert("Please fill all the fields");
       return;
     }
     const booking = {
+      bookingId,
       bus,
       from,
       to,
